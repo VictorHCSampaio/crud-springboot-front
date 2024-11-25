@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todos produtos</title>
+    <link rel="stylesheet" href="styles/estilo.css">
+    <script type="text/javascript" src="scripts/script_listallproducts.js"></script>
+</head>
+<body>
+    <center>
+    <div class="mydiv-1">
+        <div id="loading">
+            <span>Buscando produtos...</span>
+        </div>
+        <h1>Cadastro MegaBytes</h1>
+        <form id="consultarId" onsubmit="consultarId(); return false">
+            <input type="text" name="id" placeholder="Digite o Id do Usuário" class="txt">
+            <input type="submit" name="op" value="CONSULTARBYID" class="botao"><BR><BR>
+        </form>
+        <button onclick="listAllProducts()" class="botao">CONSULTARTODOS</button>
+        <button onclick="document.location.href='addproduct.html' " class="botao">CADASTRAR</button>
+        <table border=1 class="style-class">
+            <tbody id="products"></tbody>
+        </table>
+    </div>
+    </center>
+</body>
+</html>

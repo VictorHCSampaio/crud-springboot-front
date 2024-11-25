@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Cadastrar produto</title>
+        <link rel="stylesheet" href="styles/estilo.css">
+        <script type="text/javascript" src="scripts/script_addproduct.js"></script>
+    </head>
+    <body>
+    <center>
+        <h1>Cadastrar Produto</h1>
+        <form class="formadd" id="formadd" name="formadd">
+           <h2>
+               <div class="form-container">
+                   <div class="form-group">
+                        <label>Descrição</label>
+                        <input placeholder= "Digite a descricão" type="text" name="descricao" id="descricao" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Preço</label>
+                        <input placeholder= "Digite a preço" type="text" name="preco" id="preco" class="txt">
+                    </div>
+
+                   <div class="form-group">
+                        <label>Categoria</label>
+                        <input placeholder= "Digite a categoria" type="text" name="categoria" id="categoria" class="txt">
+                    </div>
+
+                   <div class="form-group">
+                        <label>Quantidade de estoque</label>
+                        <input placeholder= "Digite a Quantidade de estoque" type="text" name="qtd_estoque" id="qtd_estoque" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Fornecedor</label>
+                        <input placeholder= "Digite o Fornecedor" type="text" name="fornecedor" id="fornecedor" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Tipo</label>
+                        <input placeholder= "Digite a Tipo" type="text" name="tipo" id="tipo" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Quantidade de entrada</label>
+                        <input placeholder= "Digite a Quantidade de entrada" type="text" name="qtd_entrada" id="qtd_entrada" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Marca</label>
+                        <input placeholder= "Digite a marca" type="text" name="marca" id="marca" class="txt">
+                   </div>
+
+                   <div class="form-group">
+                        <label>Cor</label>
+                        <input placeholder= "Digite a cor" type="text" name="cor" id="cor" class="txt">
+                   </div>
+                    <div>
+                        <button type="submit" onclick="addProduct(); return false" class="botao">Cadastrar</button>
+                    </div>
+               </div>
+           </h2>
+        </form>
+    </center>
+    </body>
+</html>
