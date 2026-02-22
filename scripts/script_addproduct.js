@@ -15,7 +15,7 @@ async function addProduct(){
     const formE1 = document.querySelector("#formadd");
     const formData = new FormData(formE1);
     const product = Object.fromEntries(formData);
-    const url = "http://localhost:8080/produto/add";
+    const url = "https://crud-springboot-7s6y.onrender.com/produto/add";
     const option = {
         method : 'POST',
         headers : {'Content-Type': 'application/json'},

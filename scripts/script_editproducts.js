@@ -7,7 +7,7 @@ async function editProduct(){
         formObject[key] = value;
     });
 
-    const apiUrl = "http://localhost:8080/produto/update";
+    const apiUrl = "https://crud-springboot-7s6y.onrender.com/produto/update";
 
     async function sendFormData() {
         try {
@@ -40,7 +40,7 @@ async function showForm(){
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
     console.log(params)
-    const url = "http://localhost:8080/produto/list/"+id;
+    const url = "https://crud-springboot-7s6y.onrender.com/produto/list/"+id;
     const dados = await fetch(url, {method: "GET"});
     if(dados.status === 200){
             const product = await dados.json();
