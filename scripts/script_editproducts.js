@@ -85,6 +85,7 @@ async function showForm(){
                             <input placeholder= "Digite a cor" class="txt" type="txt" name="cor" value= "${product.cor}"> <BR>
                         </div>
                         <input type="submit" name="op" value="ATUALIZAR" class="botao" >
+                        <BR>
                         <input type="submit" name="op" value="CANCELAR" class="botao" onclick="document.location.href = 'index.html'; return false;">
                     </div>
                     </form>
