@@ -25,7 +25,7 @@ async function addProduct(){
     if(result.status === 201){
         clearTextFields();
         alert('Cadastrado com sucesso');
-        document.location.href = "listallproducts.html";
+        document.location.href = "index.html";
     }
     else{
         alert('Erro ao cadastrar')

@@ -25,7 +25,7 @@ async function editProduct(){
 
             const responseData = await response.json();
             console.log("Response Data:", responseData);
-            document.location.href = "listallproducts.html";
+            document.location.href = "index.html";
 
         } catch (error) {
             console.error("Error:", error);
