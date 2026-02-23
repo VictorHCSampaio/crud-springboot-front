@@ -1,69 +1,64 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <title>Cadastrar produto</title>
-        <link rel="stylesheet" href="styles/estilo.css">
-        <script type="text/javascript" src="scripts/script_addproduct.js"></script>
-    </head>
-    <body>
-    <center>
-        <h1>Cadastrar Produto</h1>
-        <form class="formadd" id="formadd" name="formadd">
-           <h2>
-               <div class="form-container">
-                   <div class="form-group">
-                        <label>Descrição</label>
-                        <input placeholder= "Digite a descricão" type="text" name="descricao" id="descricao" class="txt">
-                   </div>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastrar Produto</title>
+    <link rel="stylesheet" href="styles/global.css">
+</head>
+<body>
+<div class="container">
+    <header class="header">
+        <h1>Adicionar Novo Produto</h1>
+    </header>
 
-                   <div class="form-group">
-                        <label>Preço</label>
-                        <input placeholder= "Digite a preço" type="text" name="preco" id="preco" class="txt">
-                    </div>
+    <form id="formadd" onsubmit="addProduct(); return false;">
+        <div class="form-grid">
+            <div class="form-group">
+                <label for="descricao">Descrição</label>
+                <input type="text" id="descricao" name="descricao" placeholder="Ex: Notebook Dell" required>
+            </div>
+            <div class="form-group">
+                <label for="preco">Preço (R$)</label>
+                <input type="number" id="preco" name="preco" step="0.01" placeholder="Ex: 3500.00" required>
+            </div>
+            <div class="form-group">
+                <label for="categoria">Categoria</label>
+                <input type="text" id="categoria" name="categoria" placeholder="Ex: Eletrônicos">
+            </div>
+            <div class="form-group">
+                <label for="qtd_estoque">Estoque Atual</label>
+                <input type="number" id="qtd_estoque" name="qtd_estoque" placeholder="Ex: 50">
+            </div>
+            <div class="form-group">
+                <label for="fornecedor">Fornecedor</label>
+                <input type="text" id="fornecedor" name="fornecedor" placeholder="Ex: Dell Brasil">
+            </div>
+            <div class="form-group">
+                <label for="tipo">Tipo</label>
+                <input type="text" id="tipo" name="tipo" placeholder="Ex: Computador">
+            </div>
+            <div class="form-group">
+                <label for="qtd_entrada">Quantidade de Entrada</label>
+                <input type="number" id="qtd_entrada" name="qtd_entrada" placeholder="Ex: 50">
+            </div>
+            <div class="form-group">
+                <label for="marca">Marca</label>
+                <input type="text" id="marca" name="marca" placeholder="Ex: Dell">
+            </div>
+            <div class="form-group">
+                <label for="cor">Cor</label>
+                <input type="text" id="cor" name="cor" placeholder="Ex: Prata">
+            </div>
+        </div>
 
-                   <div class="form-group">
-                        <label>Categoria</label>
-                        <input placeholder= "Digite a categoria" type="text" name="categoria" id="categoria" class="txt">
-                    </div>
+        <div class="form-actions">
+            <a href="index.html" class="btn btn-secondary">Cancelar</a>
+            <button type="submit" class="btn btn-primary">Salvar Produto</button>
+        </div>
+    </form>
+</div>
 
-                   <div class="form-group">
-                        <label>Quantidade de estoque</label>
-                        <input placeholder= "Digite a Quantidade de estoque" type="text" name="qtd_estoque" id="qtd_estoque" class="txt">
-                   </div>
-
-                   <div class="form-group">
-                        <label>Fornecedor</label>
-                        <input placeholder= "Digite o Fornecedor" type="text" name="fornecedor" id="fornecedor" class="txt">
-                   </div>
-
-                   <div class="form-group">
-                        <label>Tipo</label>
-                        <input placeholder= "Digite a Tipo" type="text" name="tipo" id="tipo" class="txt">
-                   </div>
-
-                   <div class="form-group">
-                        <label>Quantidade de entrada</label>
-                        <input placeholder= "Digite a Quantidade de entrada" type="text" name="qtd_entrada" id="qtd_entrada" class="txt">
-                   </div>
-
-                   <div class="form-group">
-                        <label>Marca</label>
-                        <input placeholder= "Digite a marca" type="text" name="marca" id="marca" class="txt">
-                   </div>
-
-                   <div class="form-group">
-                        <label>Cor</label>
-                        <input placeholder= "Digite a cor" type="text" name="cor" id="cor" class="txt">
-                   </div>
-                    <div>
-                        <button type="submit" onclick="addProduct(); return false" class="botao">Cadastrar</button>
-                    </div>
-               </div>
-           </h2>
-        </form>
-    </center>
-    </body>
+<script src="scripts/NOME_DO_SEU_SCRIPT_DE_ADICIONAR.js"></script>
+</body>
 </html>

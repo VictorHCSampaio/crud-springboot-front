@@ -44,52 +44,55 @@ async function showForm(){
     const dados = await fetch(url, {method: "GET"});
     if(dados.status === 200){
             const product = await dados.json();
-            let form = `
-            <form id = "edit" onSubmit = "editProduct(); return false">
-                        ID........: ${product.id} <input type="hidden" name="id" value=${product.id} class="txt">  <BR>
-                     <div class="form-container">
-                        <div class="form-group">
-                            <label for="descricao">Descrição:</label>
-                            <input placeholder= "Digite a descricão" class="txt" type="text" name="descricao" value="${product.descricao}">  <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="preco">Preço:</label>
-                            <input placeholder= "Digite o preço" class="txt" type="number" name="preco" value= ${product.preco}> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="categoria">Categoria:</label>
-                            <input placeholder= "Digite a categoria" class="txt" type="text" name="categoria" value= "${product.categoria}"> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="qtd_estoque">Quantidade de Estoque:</label>
-                            <input placeholder= "Digite a Quantidade de estoque" class="txt" type="number" name="qtd_estoque" value= ${product.qtd_estoque}> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="fornecedor">Fornecedor:</label>
-                            <input placeholder= "Digite o Fornecedor" class="txt" type="text" name="fornecedor" value= "${product.fornecedor}"> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="tipo">Tipo:</label>
-                            <input placeholder= "Digite o Tipo" class="txt" type="text" name="tipo" value= "${product.tipo}"> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="qtd_entrada">Quantidade de entrada:</label>
-                            <input placeholder= "Digite a quantidade" class="txt" type="number" name="qtd_entrada" value= ${product.qtd_entrada}> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="marca">Marca:</label>
-                            <input placeholder= "Digite a marca" class="txt" type="txt" name="marca" value= "${product.marca}"> <BR>
-                        </div>
-                        <div class="form-group">
-                            <label for="cor">Cor:</label>
-                            <input placeholder= "Digite a cor" class="txt" type="txt" name="cor" value= "${product.cor}"> <BR>
-                        </div>
-                        <input type="submit" name="op" value="ATUALIZAR" class="botao" >
-                        <BR>
-                        <input type="submit" name="op" value="CANCELAR" class="botao" onclick="document.location.href = 'index.html'; return false;">
-                    </div>
-                    </form>
-            `
+        let form = `
+        <form id="edit" onSubmit="editProduct(); return false">
+            <input type="hidden" name="id" value="${product.id}">
+    
+            <div class="form-grid">
+                <div class="form-group">
+                    <label for="descricao">Descrição:</label>
+                    <input type="text" name="descricao" value="${product.descricao}" required>
+                </div>
+                <div class="form-group">
+                    <label for="preco">Preço:</label>
+                    <input type="number" name="preco" value="${product.preco}" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="categoria">Categoria:</label>
+                    <input type="text" name="categoria" value="${product.categoria}">
+                </div>
+                <div class="form-group">
+                    <label for="qtd_estoque">Estoque Atual:</label>
+                    <input type="number" name="qtd_estoque" value="${product.qtd_estoque}">
+                </div>
+                <div class="form-group">
+                    <label for="fornecedor">Fornecedor:</label>
+                    <input type="text" name="fornecedor" value="${product.fornecedor}">
+                </div>
+                <div class="form-group">
+                    <label for="tipo">Tipo:</label>
+                    <input type="text" name="tipo" value="${product.tipo}">
+                </div>
+                <div class="form-group">
+                    <label for="qtd_entrada">Quantidade de Entrada:</label>
+                    <input type="number" name="qtd_entrada" value="${product.qtd_entrada}">
+                </div>
+                <div class="form-group">
+                    <label for="marca">Marca:</label>
+                    <input type="text" name="marca" value="${product.marca}">
+                </div>
+                <div class="form-group">
+                    <label for="cor">Cor:</label>
+                    <input type="text" name="cor" value="${product.cor}">
+                </div>
+            </div>
+    
+            <div class="form-actions">
+                <button type="button" class="btn btn-secondary" onclick="document.location.href='index.html';">Cancelar</button>
+                <button type="submit" class="btn btn-primary">Atualizar</button>
+            </div>
+        </form>
+`;
            document.getElementById("MainEditDiv").innerHTML = form;
         }
 
