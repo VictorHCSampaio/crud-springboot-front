@@ -129,17 +129,16 @@ th {
 
 .center-img {
     text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    vertical-align: middle;
 }
 
-.img {
+.center-img button,
+.center-img a {
+    display: inline-block;
+    vertical-align: middle;
+    background: none;
+    border: none;
     cursor: pointer;
-    border-radius: 4px;
-    transition: transform 0.2s;
-    /* Opcional: inverte ícones pretos para brancos se necessário. Se seus ícones já forem coloridos, remova a linha abaixo */
-    filter: invert(1) brightness(2);
 }
 
 .img:hover {
