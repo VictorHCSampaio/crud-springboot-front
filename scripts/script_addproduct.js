@@ -1,3 +1,5 @@
+const API_BASE_URL = "http://localhost:8080";
+
 function clearTextFields(){
     document.getElementById("descricao").value = "";
     document.getElementById("preco").value = "";
@@ -15,10 +17,11 @@ async function addProduct(){
     const formE1 = document.querySelector("#formadd");
     const formData = new FormData(formE1);
     const product = Object.fromEntries(formData);
-    const url = "https://crud-springboot-7s6y.onrender.com/produto/add";
+    const url = `${API_BASE_URL}/produto/add`;
     const option = {
         method : 'POST',
         headers : {'Content-Type': 'application/json'},
+        credentials: "include",
         body : JSON.stringify(product)
     }
     const result = await fetch(url, option);
