@@ -1,3 +1,5 @@
+const API_BASE_URL = "http://localhost:8080";
+
 function clearLoading(){
     document.getElementById("loading").style.display = "none";
 }
@@ -45,8 +47,8 @@ console.log(products)
 async function confirmarDelete(id) {
     var confirmacao = confirm("Você tem certeza que deseja continuar?");
     if (confirmacao) {
-        const url = "https://crud-springboot-7s6y.onrender.com/produto/delete/"+id;
-        const dados = await fetch(url, {method: "DELETE"});
+        const url = `${API_BASE_URL}/produto/delete/${id}`;
+        const dados = await fetch(url, {method: "DELETE", credentials: "include"});
         alert("Você deletou o produto de id: "+id);
         listAllProducts();
     } else {
@@ -55,8 +57,8 @@ async function confirmarDelete(id) {
 }
 
 async function listAllProducts(){
-    const url = "https://crud-springboot-7s6y.onrender.com/produto/listall";
-    const dados = await fetch(url, {method: "GET"});
+    const url = `${API_BASE_URL}/produto/listall`;
+    const dados = await fetch(url, {method: "GET", credentials: "include"});
     if(dados.status === 200){
         const products = await dados.json();
         if(products){
@@ -69,8 +71,8 @@ async function consultarId(){
     const form = document.getElementById("consultarId");
     const data = new FormData(form);
         const id = data.get("id");
-        const url = "https://crud-springboot-7s6y.onrender.com/produto/list/"+id;
-        const dados = await fetch(url, {method: "GET"});
+        const url = `${API_BASE_URL}/produto/list/${id}`;
+        const dados = await fetch(url, {method: "GET", credentials: "include"});
         if(dados.status === 200){
                 const product = await dados.json();
                 showProducts([product]);
