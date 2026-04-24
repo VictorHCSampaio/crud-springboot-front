@@ -15,6 +15,9 @@ const urlParams = new URLSearchParams(window.location.search);
 if (urlParams.get("registered") === "true") {
     loginMessage.textContent = "Conta criada com sucesso. Faça login para continuar.";
     loginMessage.classList.add("success-message");
+} else if (urlParams.get("reset") === "true") {
+    loginMessage.textContent = "Senha resetada com sucesso. Faça login com sua nova senha.";
+    loginMessage.classList.add("success-message");
 }
 
 loginForm.addEventListener("submit", async function (event) {
