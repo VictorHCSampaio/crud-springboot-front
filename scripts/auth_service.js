@@ -1,4 +1,4 @@
-const AUTH_BASE_URL = "http://localhost:8080";
+const AUTH_BASE_URL = BACKEND_URL;
 const AUTH_KEY = "auth";
 const AUTH_2FA_KEY = "auth_2fa";
 

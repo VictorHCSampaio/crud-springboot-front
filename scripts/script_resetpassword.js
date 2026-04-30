@@ -1,4 +1,4 @@
-const AUTH_BASE_URL = "http://localhost:8080/auth";
+const AUTH_BASE_URL = `${BACKEND_URL}/auth`;
 const REQUEST_URL = `${AUTH_BASE_URL}/password-reset/request`;
 const CONFIRM_URL = `${AUTH_BASE_URL}/password-reset/confirm`;
 
@@ -33,7 +33,7 @@ requestForm.addEventListener("submit", async function (event) {
                 return;
             }
             if (response.status === 404) {
-                requestMessage.textContent = "Endpoint de reset não encontrado em localhost:8080.";
+                requestMessage.textContent = "Endpoint de reset não encontrado em localhost:8443.";
                 return;
             }
             requestMessage.textContent = "Erro ao enviar solicitação. Tente novamente.";
@@ -45,7 +45,7 @@ requestForm.addEventListener("submit", async function (event) {
         requestDiv.classList.add("hidden");
         confirmDiv.classList.remove("hidden");
     } catch (error) {
-        requestMessage.textContent = "Backend indisponível em localhost:8080. Inicie a API e tente novamente.";
+        requestMessage.textContent = "Backend indisponível em localhost:8443. Inicie a API e tente novamente.";
     }
 });
 
@@ -81,7 +81,7 @@ confirmForm.addEventListener("submit", async function (event) {
                 return;
             }
             if (response.status === 404) {
-                confirmMessage.textContent = "Endpoint de confirmação não encontrado em localhost:8080.";
+                confirmMessage.textContent = "Endpoint de confirmação não encontrado em localhost:8443.";
                 return;
             }
             confirmMessage.textContent = "Erro ao resetar senha. Tente novamente.";
@@ -94,6 +94,6 @@ confirmForm.addEventListener("submit", async function (event) {
             window.location.href = "login.html?reset=true";
         }, 2000);
     } catch (error) {
-        confirmMessage.textContent = "Backend indisponível em localhost:8080. Inicie a API e tente novamente.";
+        confirmMessage.textContent = "Backend indisponível em localhost:8443. Inicie a API e tente novamente.";
     }
 });

@@ -1,5 +1,5 @@
 const AUTH_KEY = "auth";
-const AUTH_BASE_URL = "http://localhost:8080";
+const AUTH_BASE_URL = BACKEND_URL;
 const LOGIN_URL = `${AUTH_BASE_URL}/auth/login`;
 
 if (localStorage.getItem("auth_2fa") === "true") {
@@ -45,7 +45,7 @@ loginForm.addEventListener("submit", async function (event) {
                 return;
             }
             if (response.status === 404) {
-                loginMessage.textContent = "Endpoint de login não encontrado em localhost:8080.";
+                loginMessage.textContent = "Endpoint de login não encontrado em localhost:8443.";
                 return;
             }
             loginMessage.textContent = "Não foi possível autenticar no momento. Tente novamente.";
@@ -56,6 +56,6 @@ loginForm.addEventListener("submit", async function (event) {
         localStorage.removeItem("auth_2fa");
         window.location.href = "2fa.html";
     } catch (error) {
-        loginMessage.textContent = "Backend indisponível em localhost:8080. Inicie a API e tente novamente.";
+        loginMessage.textContent = "Backend indisponível em localhost:8443. Inicie a API e tente novamente.";
     }
 });
