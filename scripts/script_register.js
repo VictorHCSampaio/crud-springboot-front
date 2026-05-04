@@ -1,4 +1,4 @@
-const AUTH_BASE_URL = "http://localhost:8080";
+const AUTH_BASE_URL = BACKEND_URL;
 const REGISTER_URL = `${AUTH_BASE_URL}/auth/register`;
 
 const registerForm = document.getElementById("registerForm");
@@ -32,7 +32,7 @@ registerForm.addEventListener("submit", async function (event) {
                 return;
             }
             if (response.status === 404) {
-                registerMessage.textContent = "Endpoint de cadastro não encontrado em localhost:8080.";
+                registerMessage.textContent = "Endpoint de cadastro não encontrado em localhost:8443.";
                 return;
             }
             registerMessage.textContent = "Não foi possível concluir o cadastro agora.";
@@ -41,6 +41,6 @@ registerForm.addEventListener("submit", async function (event) {
 
         window.location.href = "login.html?registered=true";
     } catch (error) {
-        registerMessage.textContent = "Backend indisponível em localhost:8080. Inicie a API e tente novamente.";
+        registerMessage.textContent = "Backend indisponível em localhost:8443. Inicie a API e tente novamente.";
     }
 });

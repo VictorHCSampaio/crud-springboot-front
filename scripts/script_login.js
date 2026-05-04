@@ -1,5 +1,5 @@
 const AUTH_KEY = "auth";
-const AUTH_BASE_URL = "http://localhost:8080";
+const AUTH_BASE_URL = BACKEND_URL;
 const LOGIN_URL = `${AUTH_BASE_URL}/auth/login`;
 
 if (localStorage.getItem("auth_2fa") === "true") {
@@ -14,6 +14,9 @@ const urlParams = new URLSearchParams(window.location.search);
 
 if (urlParams.get("registered") === "true") {
     loginMessage.textContent = "Conta criada com sucesso. Faça login para continuar.";
+    loginMessage.classList.add("success-message");
+} else if (urlParams.get("reset") === "true") {
+    loginMessage.textContent = "Senha resetada com sucesso. Faça login com sua nova senha.";
     loginMessage.classList.add("success-message");
 }
 
@@ -42,7 +45,7 @@ loginForm.addEventListener("submit", async function (event) {
                 return;
             }
             if (response.status === 404) {
-                loginMessage.textContent = "Endpoint de login não encontrado em localhost:8080.";
+                loginMessage.textContent = "Endpoint de login não encontrado em localhost:8443.";
                 return;
             }
             loginMessage.textContent = "Não foi possível autenticar no momento. Tente novamente.";
@@ -53,6 +56,6 @@ loginForm.addEventListener("submit", async function (event) {
         localStorage.removeItem("auth_2fa");
         window.location.href = "2fa.html";
     } catch (error) {
-        loginMessage.textContent = "Backend indisponível em localhost:8080. Inicie a API e tente novamente.";
+        loginMessage.textContent = "Backend indisponível em localhost:8443. Inicie a API e tente novamente.";
     }
 });

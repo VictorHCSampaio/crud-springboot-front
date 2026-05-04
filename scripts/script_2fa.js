@@ -62,7 +62,7 @@ twoFaForm.addEventListener("submit", async function (event) {
 
         setMessage("Não foi possível validar o 2FA no momento.", false);
     } catch (error) {
-        setMessage("Backend indisponível em localhost:8080", false);
+        setMessage("Backend indisponível em localhost:8443", false);
     } finally {
         setButtonLoading(verifyTwoFaBtn, false, "Validando...", "Validar código");
     }
@@ -94,7 +94,7 @@ setupTwoFaBtn.addEventListener("click", async function () {
         twoFaSetupResult.classList.remove("hidden");
         setMessage("Configuração carregada com sucesso.", true);
     } catch (error) {
-        setMessage("Backend indisponível em localhost:8080", false);
+        setMessage("Backend indisponível em localhost:8443", false);
     } finally {
         setButtonLoading(setupTwoFaBtn, false, "Carregando QR...", "Configurar autenticador (QR)");
     }
