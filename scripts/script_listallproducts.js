@@ -47,7 +47,7 @@ console.log(products)
 async function confirmarDelete(id) {
     var confirmacao = confirm("Você tem certeza que deseja continuar?");
     if (confirmacao) {
-        const url = `${API_BASE_URL}/produto/delete/${id}`;
+        const url = `/produto/delete/${id}`;
         const dados = await fetch(url, {method: "DELETE", credentials: "include"});
         alert("Você deletou o produto de id: "+id);
         listAllProducts();
@@ -57,7 +57,7 @@ async function confirmarDelete(id) {
 }
 
 async function listAllProducts(){
-    const url = `${API_BASE_URL}/produto/listall`;
+    const url = `/produto/listall`;
     const dados = await fetch(url, {method: "GET", credentials: "include"});
     if(dados.status === 200){
         const products = await dados.json();
@@ -71,7 +71,7 @@ async function consultarId(){
     const form = document.getElementById("consultarId");
     const data = new FormData(form);
         const id = data.get("id");
-        const url = `${API_BASE_URL}/produto/list/${id}`;
+        const url = `/produto/list/${id}`;
         const dados = await fetch(url, {method: "GET", credentials: "include"});
         if(dados.status === 200){
                 const product = await dados.json();

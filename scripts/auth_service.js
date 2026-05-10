@@ -3,7 +3,7 @@ const AUTH_KEY = "auth";
 const AUTH_2FA_KEY = "auth_2fa";
 
 async function get2FASetup() {
-    const response = await fetch(`${AUTH_BASE_URL}/auth/2fa/setup`, {
+    const response = await fetch(`/auth/2fa/setup`, {
         method: "POST",
         credentials: "include"
     });
@@ -12,7 +12,7 @@ async function get2FASetup() {
 }
 
 async function verify2FA(code) {
-    const response = await fetch(`${AUTH_BASE_URL}/auth/2fa/verify`, {
+    const response = await fetch(`/auth/2fa/verify`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
@@ -25,7 +25,7 @@ async function verify2FA(code) {
 }
 
 async function signout() {
-    const response = await fetch(`${AUTH_BASE_URL}/auth/signout`, {
+    const response = await fetch(`/auth/signout`, {
         method: "POST",
         credentials: "include"
     });

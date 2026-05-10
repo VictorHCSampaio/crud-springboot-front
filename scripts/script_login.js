@@ -1,6 +1,6 @@
 const AUTH_KEY = "auth";
 const AUTH_BASE_URL = BACKEND_URL;
-const LOGIN_URL = `${AUTH_BASE_URL}/auth/login`;
+const LOGIN_URL = `/auth/login`;
 
 if (localStorage.getItem("auth_2fa") === "true") {
     window.location.href = "index.html";

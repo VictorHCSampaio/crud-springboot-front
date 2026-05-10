@@ -1,12 +1,9 @@
 /**
  * Configuração central do frontend.
  *
- * URL vazia = URL relativa: o frontend é servido pelo próprio Spring Boot,
- * eliminando problemas de cross-origin e cookies.
+ * Base da API. Em desenvolvimento local o backend está em http://localhost:8080.
  *
- * Acesse pelo backend: https://localhost:8443/login.html
- *
- * Se precisar usar um servidor externo, troque para a URL absoluta:
- *   const BACKEND_URL = "https://localhost:8443";
+ * Para servir o front pelo próprio Spring na mesma origem e usar URLs relativas,
+ * use: const BACKEND_URL = "";
  */
-const BACKEND_URL = "";
+const BACKEND_URL = "https://localhost:8334";

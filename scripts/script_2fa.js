@@ -6,6 +6,7 @@ const setupTwoFaBtn = document.getElementById("setupTwoFaBtn");
 const twoFaSetupResult = document.getElementById("twoFaSetupResult");
 const twoFaQrImage = document.getElementById("twoFaQrImage");
 const twoFaSecretText = document.getElementById("twoFaSecretText");
+const backToLoginBtn = document.getElementById("backToLoginBtn");
 
 if (!hasPrimaryAuth()) {
     window.location.href = "login.html";
@@ -24,6 +25,23 @@ function setButtonLoading(button, isLoading, loadingText, defaultText) {
     button.disabled = isLoading;
     button.textContent = isLoading ? loadingText : defaultText;
 }
+
+backToLoginBtn.addEventListener("click", async function () {
+    backToLoginBtn.disabled = true;
+    const previousText = backToLoginBtn.textContent;
+    backToLoginBtn.textContent = "Saindo...";
+
+    try {
+        await signout();
+    } catch (error) {
+        console.error("Falha ao encerrar sessão no backend.", error);
+    } finally {
+        clearAuthState();
+        backToLoginBtn.disabled = false;
+        backToLoginBtn.textContent = previousText;
+        window.location.href = "login.html";
+    }
+});
 
 twoFaCodeInput.addEventListener("input", function () {
     this.value = this.value.replace(/\D/g, "").slice(0, 6);

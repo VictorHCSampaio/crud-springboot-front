@@ -17,7 +17,7 @@ async function addProduct(){
     const formE1 = document.querySelector("#formadd");
     const formData = new FormData(formE1);
     const product = Object.fromEntries(formData);
-    const url = `${API_BASE_URL}/produto/add`;
+    const url = `/produto/add`;
     const option = {
         method : 'POST',
         headers : {'Content-Type': 'application/json'},

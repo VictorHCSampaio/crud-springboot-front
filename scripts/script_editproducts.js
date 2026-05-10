@@ -9,7 +9,7 @@ async function editProduct(){
         formObject[key] = value;
     });
 
-    const apiUrl = `${API_BASE_URL}/produto/update`;
+    const apiUrl = `/produto/update`;
 
     async function sendFormData() {
         try {
@@ -43,7 +43,7 @@ async function showForm(){
     const params = new URLSearchParams(window.location.search);
     const id = params.get("id");
     console.log(params)
-    const url = `${API_BASE_URL}/produto/list/${id}`;
+    const url = `/produto/list/${id}`;
     const dados = await fetch(url, {method: "GET", credentials: "include"});
     if(dados.status === 200){
             const product = await dados.json();

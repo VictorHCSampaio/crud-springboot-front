@@ -1,6 +1,6 @@
-const AUTH_BASE_URL = `${BACKEND_URL}/auth`;
-const REQUEST_URL = `${AUTH_BASE_URL}/password-reset/request`;
-const CONFIRM_URL = `${AUTH_BASE_URL}/password-reset/confirm`;
+const AUTH_BASE_URL = `/auth`;
+const REQUEST_URL = `/password-reset/request`;
+const CONFIRM_URL = `/password-reset/confirm`;
 
 const requestForm = document.getElementById("resetRequestForm");
 const confirmForm = document.getElementById("resetConfirmForm");

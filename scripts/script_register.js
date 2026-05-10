@@ -1,5 +1,5 @@
 const AUTH_BASE_URL = BACKEND_URL;
-const REGISTER_URL = `${AUTH_BASE_URL}/auth/register`;
+const REGISTER_URL = `/auth/register`;
 
 const registerForm = document.getElementById("registerForm");
 const registerMessage = document.getElementById("registerMessage");
