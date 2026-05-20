@@ -36,8 +36,8 @@ console.log(products)
                 <td class="cor">${product.qtd_entrada}</td>
                 <td class="cor">${product.marca}</td>
                 <td class="cor">${product.cor}</td>
-                <td class="center-img"><a href=${"edit.html?id="+product.id}><img src="images/edit01.png" width="30" height="30" class="img"></a></td>          
-                <td class="center-img"><button onclick=${link}><img src="images/trash01.jpg" width="30" height="30" class="img"></button></td>
+                <td class="center-img"><a href=${"edit.html?id="+product.id} class="btn btn-primary" style="padding: 0.5rem 0.75rem;"><i class="fas fa-pencil-alt"></i></a></td>          
+                <td class="center-img"><button onclick=${link} class="btn btn-danger" style="padding: 0.5rem 0.75rem;"><i class="fas fa-trash"></i></button></td>
             </tr>
         `;
     }

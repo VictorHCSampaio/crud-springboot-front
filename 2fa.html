@@ -8,7 +8,7 @@
 </head>
 <body class="login-page">
 <div class="login-card">
-    <h1>Validação em 2 etapas</h1>
+    <h1><i class="fas fa-shield-alt"></i> Validação em 2 etapas</h1>
     <p class="login-subtitle">Informe o código de 6 dígitos do seu autenticador.</p>
 
     <form id="twoFaForm" class="login-form">
@@ -18,11 +18,11 @@
         </div>
 
         <p id="twoFaMessage" class="login-message" aria-live="polite"></p>
-        <button id="verifyTwoFaBtn" type="submit" class="btn btn-primary">Validar código</button>
+        <button id="verifyTwoFaBtn" type="submit" class="btn btn-primary"><i class="fas fa-check"></i> Validar código</button>
     </form>
 
     <div class="twofa-setup">
-        <button id="setupTwoFaBtn" type="button" class="btn btn-secondary">Configurar autenticador (QR)</button>
+        <button id="setupTwoFaBtn" type="button" class="btn btn-secondary"><i class="fas fa-qrcode"></i> Configurar autenticador (QR)</button>
         <div id="twoFaSetupResult" class="twofa-setup-result hidden">
             <p class="login-subtitle">Escaneie o QR Code no app autenticador.</p>
             <img id="twoFaQrImage" alt="QR Code para configurar 2FA" class="twofa-qr-image">
@@ -31,7 +31,7 @@
     </div>
 
     <p class="auth-link-wrapper">
-        <button type="button" id="backToLoginBtn" class="btn btn-secondary">Voltar ao login</button>
+        <button type="button" id="backToLoginBtn" class="btn btn-secondary"><i class="fas fa-arrow-left"></i> Voltar ao login</button>
     </p>
 </div>
 

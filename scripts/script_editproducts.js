@@ -91,8 +91,8 @@ async function showForm(){
             </div>
     
             <div class="form-actions">
-                <button type="button" class="btn btn-secondary" onclick="document.location.href='index.html';">Cancelar</button>
-                <button type="submit" class="btn btn-primary">Atualizar</button>
+                <button type="button" class="btn btn-secondary" onclick="document.location.href='index.html';"><i class="fas fa-times"></i> Cancelar</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-sync"></i> Atualizar</button>
             </div>
         </form>
 `;

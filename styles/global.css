@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css');
 
 :root {
     /* --- Paleta de Cores (Dark Mode) --- */
@@ -64,7 +65,9 @@ body {
 
 /* --- Botões --- */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
     padding: 0.6rem 1.2rem;
     font-size: 0.875rem;
     font-weight: 500;
@@ -75,19 +78,31 @@ body {
     transition: all 0.2s;
 }
 
+.btn i {
+    font-size: 1em;
+}
+
 .btn-primary {
     background-color: var(--primary);
     color: white;
 }
 
-.btn-primary:hover { background-color: var(--primary-hover); }
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(59, 130, 246, 0.3);
+}
 
 .btn-danger {
     background-color: var(--danger);
     color: white;
 }
 
-.btn-danger:hover { background-color: var(--danger-hover); }
+.btn-danger:hover {
+    background-color: var(--danger-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+}
 
 .btn-secondary {
     background-color: transparent;
@@ -98,6 +113,7 @@ body {
 .btn-secondary:hover {
     background-color: var(--border);
     border-color: var(--text-light);
+    transform: translateY(-2px);
 }
 
 /* --- Tabela --- */
@@ -130,6 +146,15 @@ th {
     text-transform: uppercase;
     letter-spacing: 0.05em;
     font-size: 0.8rem;
+}
+
+tr:nth-child(even) {
+    background-color: rgba(30, 41, 59, 0.5);
+}
+
+tr:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    transition: background-color 0.2s ease;
 }
 
 .center-img {
@@ -313,4 +338,58 @@ input::placeholder {
 
 .hidden {
     display: none;
+}
+
+/* --- Melhorias de Ícones --- */
+.btn i {
+    margin-right: 0.25rem;
+    transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+    transform: scale(1.1);
+}
+
+.btn-primary:hover i {
+    animation: iconPulse 0.5s ease-in-out;
+}
+
+@keyframes iconPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+/* --- Badges e Status --- */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.badge-success {
+    background-color: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border: 1px solid #22c55e;
+}
+
+.badge-warning {
+    background-color: rgba(234, 179, 8, 0.2);
+    color: #eab308;
+    border: 1px solid #eab308;
+}
+
+.badge-danger {
+    background-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+    border: 1px solid #ef4444;
+}
+
+.badge-info {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: #3b82f6;
+    border: 1px solid #3b82f6;
 }
