@@ -1,0 +1,61 @@
+## 🚀 CRUD Produtos Frontend — Release v1.0.0
+
+Interface web completa para gerenciamento de estoque de produtos, com autenticação segura e operações CRUD totalmente integradas ao backend REST.
+
+---
+
+## ✨ Funcionalidades principais
+
+- 🔑 **Autenticação segura** — Login com autenticação de dois fatores (2FA) via TOTP
+- 👤 **Gestão de usuários** — Cadastro, login e recuperação de senha por e-mail
+- 📦 **Operações CRUD** — Listar, adicionar, editar e deletar produtos
+- 📱 **Interface responsiva** — Design moderno com CSS3 e layout adaptativo
+- ⚡ **Sem dependências externas** — 100% vanilla JavaScript (ES6+), sem frameworks, sem bundlers
+
+---
+
+## 🛠️ Tecnologias
+
+- HTML5 + CSS3
+- JavaScript ES6+
+- Fetch API (integração REST)
+- Certificado HTTPS (autoassinado para desenvolvimento)
+
+---
+
+## 📋 Estrutura de páginas
+
+| Página | Função |
+|---|---|
+| `login.html` | Autenticação do usuário |
+| `register.html` | Cadastro de novo usuário |
+| `2fa.html` | Validação de código TOTP |
+| `resetpassword.html` | Recuperação de senha |
+| `index.html` | Listagem de produtos (protegida) |
+| `addproduct.html` | Criar novo produto |
+| `edit.html` | Editar produto existente |
+
+---
+
+## 🚀 Como usar
+
+O frontend é servido automaticamente pelo Spring Boot em `https://localhost:8443`.
+
+> ⚠️ Na primeira vez, aceite o certificado autoassinado clicando em **"Avançar"**
+
+---
+
+## 🔧 Configuração
+
+URL do backend centralizada em `scripts/config.js`:
+
+- **Relativa (padrão):** `BACKEND_URL = ""` — para servir pelo Spring Boot
+- **Absoluta:** `BACKEND_URL = "https://localhost:8443"` — para servidor separado
+
+---
+
+## 📝 Notas
+
+- Projeto totalmente vanilla — sem dependências npm
+- Estado de autenticação persistido via `localStorage`
+- API segue padrão REST com integração via Fetch API
